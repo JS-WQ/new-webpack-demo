@@ -1,4 +1,7 @@
 var path = require('path');
+var HtmlwebpackPlugin = require('html-webpack-plugin');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+
 
 module.exports = {
     entry: './src/index.js',
@@ -9,8 +12,17 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
-        port: 9000
+        port: 8080
     },
+    plugins: [
+        new HtmlwebpackPlugin({
+            title: 'Webpack-demos',
+            filename: 'index.html'
+        }),
+        new OpenBrowserPlugin({
+            url: 'http://localhost:8080'
+        })
+    ],
     module: {
         loaders:[
             {
