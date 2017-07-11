@@ -5,7 +5,7 @@ import './frank.less'
 function component() {
     var $div = $('<div></div>')
 
-    $div.html( _.join(['Hi', 'webpack'], ' '))
+    $div.html( _.join(['hello', 'webpack'], ' '))
 
     return $div
 }
